@@ -1,0 +1,24 @@
+package Practise;
+
+public class CountWordInString {
+
+	public static void main(String[] args) {
+		
+		String str = " Count word ppp in string ";
+		
+		int count=1;
+		
+		for (int i = 0; i < str.length()-1; i++) {
+			
+			
+			if((str.charAt(i+1)==' ') && (str.charAt(i)!=' ')  )
+			{
+				count++;
+			}
+			
+		}
+		System.out.println("word count is "+count);
+
+	}
+
+}

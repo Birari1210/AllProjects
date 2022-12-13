@@ -1,0 +1,21 @@
+package Ques_15;
+
+import java.time.LocalDate;
+
+public class Item {
+	public static void main(String[] args) {
+		
+		int itemId;
+		String itemName;
+		int costPrice;
+		int cellPrice;
+		LocalDate DoM;
+		LocalDate DoE;
+		
+		
+		
+		
+	}
+	
+
+}

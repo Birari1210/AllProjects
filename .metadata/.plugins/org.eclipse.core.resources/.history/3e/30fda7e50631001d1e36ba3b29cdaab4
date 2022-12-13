@@ -1,0 +1,27 @@
+package Practise;
+
+import java.util.Iterator;
+
+public class PalindromeString {
+
+	public static void main(String[] args) {
+
+		String original="pqrqp";
+		String rev ="";
+		
+		int len = original.length();
+		
+		for (int i =len-1; i>=0;i--) {
+			
+			rev= rev+original.charAt(i);
+			
+		}
+		if(rev == original)
+		{
+			System.out.println("pal");
+		}
+		else
+			System.out.println("not");
+	}
+
+}

@@ -1,0 +1,6 @@
+package Assingment12;
+
+public interface Maximum {
+	void maxArray(int a[]);
+	
+}

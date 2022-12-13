@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\prasad.birari\eclipse-workspace\Assingment3\src\main\java\com\yash\model\Department.java"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\Spring_Hbm_25_April"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\springorm"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\springjdbc"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\springproject\src\main\java\springproject\Product.java"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\springhbm_17-5\Spring_Hbm_25_April\src\main\resources\applicationcontext.xml"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\CollectionAss\src\module-info.java"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\CollectionAss\src"/>
+			<item value="C:\Users\prasad.birari\eclipse-workspace\yashspring"/>
+			<item value="D:\YashSpring"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="Assingment4"/>
+			<item value="Ass3"/>
+			<item value="Ass"/>
+			<item value="Assingment3"/>
+			<item value="Assingment2"/>
+			<item value="com.spring.assi2"/>
+			<item value="com.spring.ass2"/>
+			<item value="springorm"/>
+			<item value="com.yash.springcore"/>
+			<item value="springproject"/>
+			<item value="Spring_Hibernate"/>
+		</list>
+		<list key="name">
+			<item value="Assingment4"/>
+			<item value="Ass3"/>
+			<item value="assingment2"/>
+			<item value="springorm"/>
+			<item value="springcoreAss"/>
+		</list>
+		<list key="artifactId">
+			<item value="Assingment4"/>
+			<item value="Ass3"/>
+			<item value="Assingment3"/>
+			<item value="Assingment2"/>
+			<item value="com.spring.assi2"/>
+			<item value="com.spring.ass2"/>
+			<item value="springorm"/>
+			<item value="springcoreAss"/>
+			<item value="Spring_Hibernate"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="MyJdbcApplication"/>
+			<item value="Spring_Requestparam"/>
+			<item value="Spring_mvc_requestparam"/>
+			<item value="Spring_Mvc_Jdbc2"/>
+			<item value="Spring_Mvc_Jdbc"/>
+			<item value="Spring_Mvc_19"/>
+			<item value="Spring_Mvc"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="MyJdbcApplication"/>
+			<item value="Spring_Requestparam"/>
+			<item value="Spring_mvc_requestparam"/>
+			<item value="Spring_Mvc_Jdbc2"/>
+			<item value="Spring_Mvc_Jdbc"/>
+			<item value="Spring_Mvc_19"/>
+			<item value="Spring_Mvc"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="838"/>
+		<item key="x" value="720"/>
+		<item key="y" value="0"/>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenCheckoutLocationPage">
+		<list key="scmUrl">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,59 @@
+package Practise;
+
+public class DictionaryAtoZ {
+
+	public static void main(String[] args) {
+
+		String s = "we done this code";
+       String[] sa= s.split(" ");
+       
+       for (int i = 0; i < sa.length; i++) {
+    	   for (int j = i+1; j < sa.length; j++) {
+			
+    		   if(sa[i].compareTo(sa[j])>0)
+    		   {
+    			   String temp = sa[i];
+    			   sa[i]=sa[j];
+    			   sa[j]=temp;
+		}
+		
+	}
+    	   for (int j = 0; j < sa.length; j++) {
+    		     System.out.println(sa[i]);
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		for (int i = 0; i < sa.length; i++) {
+//			
+//			for (int j = i+1; j < sa.length; j++) {
+//				
+//				if(sa[i].compareTo(sa[j])>0)
+//						{
+//					       String temp = sa[i];
+//					       sa[i]=sa[j];
+//					       sa[j]=temp;
+//						}
+//			}
+//			
+//		}
+//		for (int i = 0; i < sa.length; i++) {
+//			System.out.println(sa[i]);
+			
+		}
+		
+		
+	}
+
+}

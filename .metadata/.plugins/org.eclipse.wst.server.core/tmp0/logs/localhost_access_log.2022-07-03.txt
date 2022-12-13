@@ -1,0 +1,7 @@
+127.0.0.1 - - [03/Jul/2022:11:16:43 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [03/Jul/2022:11:16:46 +0530] "GET /Spring_Requestparam/ HTTP/1.1" 200 292
+0:0:0:0:0:0:0:1 - - [03/Jul/2022:11:16:46 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [03/Jul/2022:11:16:50 +0530] "GET /Spring_Requestparam/addprofile HTTP/1.1" 200 659
+0:0:0:0:0:0:0:1 - - [03/Jul/2022:11:16:57 +0530] "POST /Spring_Requestparam/saveprofile HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Jul/2022:11:16:57 +0530] "GET /Spring_Requestparam/ HTTP/1.1" 200 292
+0:0:0:0:0:0:0:1 - - [03/Jul/2022:11:16:59 +0530] "GET /Spring_Requestparam/viewall HTTP/1.1" 200 1357

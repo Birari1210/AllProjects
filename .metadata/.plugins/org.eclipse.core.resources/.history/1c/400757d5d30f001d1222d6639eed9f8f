@@ -1,0 +1,70 @@
+package com.yash.operation;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.yash.dao.ProjectDao;
+import com.yash.model.Employee;
+import com.yash.model.Irm;
+import com.yash.model.Project;
+
+public class ProjectOperation {
+	
+	public static void main(String[] args) {
+
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		ProjectDao pdaoobj = (ProjectDao) ctx.getBean("projectbeen");
+		Project pobj = new Project();
+		//System.out.println("hello project");
+		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter project id");
+//		pobj.setProjectid(sc.nextInt());
+//		
+//		System.out.println("Enter project name");
+//		pobj.setProjectName(sc.next());
+//		
+//		System.out.println("Enter employee id");
+//		pobj.setEmpid(sc.nextInt());
+//		
+//		System.out.println("Enter project manager id");
+//	   pobj.setPmid(sc.nextInt());	
+	   
+	   //pdaoobj.saveProject(pobj);
+		//pdaoobj.getDepartmentWithAvgSalary();
+		
+	  // pdaoobj.getProjectNameWithEmployee();
+	  // pdaoobj.MaxSalaryWithbaselocation();
+		
+	//	--------
+	
+//		pdaoobj.MaxSalarywithProject();
+//		pdaoobj.MinSalarywithProject();//7
+//		
+//		pdaoobj.MinSalarywithbaselocation();
+		
+//		System.out.println("==3==Irm Details====");
+//		List<Irm> irmlist =  pdaoobj.getdAllIrm(); 
+//		for(Irm i:irmlist) {
+//			
+//			System.out.println(i.getIrmid()+ "\t" +i.getIrmname());
+//			
+//		}
+		
+		
+		System.out.println("12====Employee name with Irm name====");
+		List<Employee> emplist = pdaoobj.getEmployeeAndIrmName();
+		for(Employee e:emplist) {
+			System.out.println(e.getEmpName()+" : "+e.getIrmid());
+
+			System.out.println("====11Project Datails With Employee name====");
+
+			System.out.println(e.getEmpName()+" : "+e.getProject().getProjectid()+" : "+e.getProject().getProjectName() );
+		}
+	}
+	
+}

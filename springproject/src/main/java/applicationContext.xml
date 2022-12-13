@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="productbean" class="springproject.Product">
+		<property name="Pname" value="yellow formal shirt" />
+	</bean>
+	
+	  <bean id="studbean1" class="springproject.Student">
+	<constructor-arg value ="jay"></constructor-arg>
+	<constructor-arg value ="100" type ="int"></constructor-arg>
+	</bean>
+	
+	<bean id="studbean2" class="springproject.Student">
+	 <constructor-arg value ="prasad"></constructor-arg>
+	 <constructor-arg value ="101" type ="int"></constructor-arg>
+	 
+	</bean>
+	
+	<bean id="studbean3" class="springproject.Student">
+	 <constructor-arg value ="rahul"></constructor-arg>
+	 <constructor-arg value ="102" type ="int"></constructor-arg>
+	</bean> 
+
+</beans>
+

@@ -1,0 +1,24 @@
+package com.springorm.model;
+
+import java.sql.Date;
+
+//Student table :- sid, sname, father_name, mother_name, classid, add1, add2, pincode, 
+//aadharno, dob, date_of_admission.
+
+public class Student {
+	
+	int sid;
+	String sname;
+	String father_name;
+	String mother_name;
+	int classid;
+    String address1;
+    String address2;
+    int pincode;
+    long aadharno;
+    Date dob;
+    Date date_of_addmission;
+
+	
+	
+}

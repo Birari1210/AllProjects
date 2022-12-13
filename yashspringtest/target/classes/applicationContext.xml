@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+<bean id="testbean" class="ass111.Student">
+  <constructor-arg>
+  <list>
+  
+   </list>
+   </constructor-arg>
+</bean>
+
+
+
+
+
+
+
+
+<!--  
+<bean id="ass12a" class="ass12.Employee">
+   <property name="empid" value="122"> </property>
+   <property name="empname" value="Nilesh"> </property>
+   <property name="dept" value="test"> </property>
+   <property name="salary" value="25000"> </property>
+</bean>
+
+<bean id="ass12a" class="ass12.Employee">
+  <constructor-arg>
+  <list>
+    <value>123</value>
+    <value>nilesh</value>
+    <value>test</value>
+    <value>2500</value>
+   </list>
+   </constructor-arg>
+</bean>
+
+<bean id="ass12b" class="ass12.Employee">
+  <constructor-arg>
+  <list>
+    <value>122</value>
+    <value>nil</value>
+    <value>developer</value>
+    <value>30000</value>
+   </list>
+   </constructor-arg>
+</bean>
+
+<bean id="ass12c" class="ass12.Employee">
+   <property name="empid" value="111"> </property>
+   <property name="empname" value="Prasad"> </property>
+   <property name="dept" value="devloper"> </property>
+   <property name="salary" value="25000"> </property>
+   
+</bean>
+
+-->
+<!-- Q1 
+	<bean id="Mobj" class="yashspringtest.Marks">
+		<constructor-arg value="35" type="int"></constructor-arg>
+		<constructor-arg value="40" type="int"></constructor-arg>
+		<constructor-arg value="50" type="int"></constructor-arg>
+	</bean>
+
+	<bean id="Studbean" class="yashspringtest.Student">
+		<constructor-arg value="Prasad"></constructor-arg>
+		<constructor-arg value="111" type="int"></constructor-arg>
+		<constructor-arg>
+			<ref bean="Mobj" />
+		</constructor-arg>
+	</bean>
+	-->
+<!-- Q2  -->
+	<bean id="combean" class="Ass2.Company">
+		<property name="cname" value="Lenevo"></property>
+	</bean>
+
+	<bean id="categorybean" class="Ass2.Category">
+		<property name="type" value="Laptop"></property>
+	</bean>
+
+	<bean id="MyItembean" class="Ass2.Item">
+		<property name="itemname" value="thinkpadi5"></property>
+		<property name="price" value="50000"></property>
+		<property name="discount" value="80"></property>
+		<property name="comObj" ref="combean"></property>
+		<property name="categoryObj" ref="categorybean">
+		</property>
+	</bean>
+
+	<!-- 
+	<bean id="addObj" class="yashspringtest.Address"> <constructor-arg 
+		value="Ratnapimpri"></constructor-arg> <constructor-arg value="Jalgaon"></constructor-arg> 
+		<constructor-arg value="Maharashatra"></constructor-arg> </bean> <bean id="Studbean1" 
+		class="yashspringtest.Student"> <constructor-arg value="Prasad"></constructor-arg> 
+		<constructor-arg value="111" type="int"></constructor-arg> <constructor-arg> 
+		<ref bean="addObj" /> </constructor-arg> </bean> -->
+
+	<!-- <bean id="StudbeanList" class="yashspringtest.Student"> <constructor-arg 
+		value="Lalit"></constructor-arg> <constructor-arg value="150" type="int"></constructor-arg> 
+		</bean> <bean name ="Mobj" class="yashspringtest.Marks"> <constructor-arg> 
+		<list> <value>45</value> <value>55</value> <value>50</value> </list> </constructor-arg> 
+		<constructor-arg><ref bean="StudbeanList"></ref></constructor-arg> </bean> -->
+
+<!-- Q3 Autowiring by constructor -->
+
+<bean id="Infobean" class="Autowire.EmpInfo">
+  <property name="depdepartment" value="HR"> </property>
+  <property name="salary" value="35000"> </property>
+   <property name="doj" value="10/05/2022"> </property>
+</bean>
+ 
+<bean id="EmpBean" class="Autowire.Employee" autowire="constructor">
+<constructor-arg value="nilesh" ></constructor-arg>
+<constructor-arg value="1015149" type="int" ></constructor-arg>
+</bean>
+
+<!-- q4 Autowiring by name -->
+
+	<bean id="itmObj" class="Autowire.Item">
+		<property name="name" value="T-Shirt"></property>
+		<property name="price" value="660"></property>
+	</bean>
+
+	<bean id="cosObj" class="Autowire.Costomer">
+		<property name="Cname" value="Nikhil"></property>
+		<property name="MobNo" value="935678383"></property>
+		<property name="address" value="Pune"></property>
+	</bean>
+	
+	<bean id="billBean" class="Autowire.Bill" autowire="byName">
+		<property name="totalBill" value="10500"></property>
+		<property name="category" value="Cotton"></property>
+	</bean>
+
+
+
+<!-- que5 		
+  <bean id="quebean" class="Ass5.Que">
+  <constructor-arg value="1" type="int"></constructor-arg>
+  <constructor-arg value="Frist super Computer in india " ></constructor-arg>
+  <constructor-arg>
+    <list>
+    <value>A) Cray-1</value>
+    <value>B) Param</value>
+    <value>C) dell</value>
+    <value>D) None</value>
+    </list>
+  </constructor-arg>
+</bean>-->
+
+
+<bean id="quebean" class="Ass5.Questions">
+		<property name="question" value="national bird of india is "></property>
+		<property name="answer">
+			<list>
+				<value>parrot</value>
+				<value>peacock</value>
+				<value>sparrow</value>
+				<value>india roller</value>
+			</list>
+		</property>
+		<property name="writeAnswer" value="peacock"></property>
+	</bean>
+
+
+	<bean id="quizbean" class="Ass5.MyQuiz">
+		<property name="quizSubject" value="General Knowledge"></property>
+		<property name="question" ref="quebean"></property>
+	</bean>
+
+
+	<bean id="quebean1" class="Ass5.Questions">
+		<property name="question" value="how many days in a week?"></property>
+		<property name="answer">
+			<list>
+				<value>seven</value>
+				<value>six</value>
+				<value>eight</value>
+				<value>nine</value>
+			</list>
+		</property>
+		<property name="writeAnswer" value="seven"></property>
+	</bean>
+
+	<bean id="quizbean1" class="Ass5.MyQuiz">
+		<property name="quizSubject" value="General Knowledge"></property>
+		<property name="question" ref="quebean1"></property>
+	</bean>
+	
+		
+	<bean id="quebean2" class="Ass5.Questions">
+		<property name="question" value="who is the first prime minister of india"></property>
+		<property name="answer">
+			<list>
+				<value>Narendra Modi</value>
+				<value>jawaharlal nehru</value>
+				<value>lokmanya tilak</value>
+				<value>manmohan singh</value>
+			</list>
+		</property>
+		<property name="writeAnswer" value="jawaharlal nehru"></property>
+	</bean>
+
+	<bean id="quizbean2" class="Ass5.MyQuiz">
+		<property name="quizSubject" value="General Knowledge"></property>
+		<property name="question" ref="quebean2"></property>
+	</bean>
+	
+<!-- Ass6 -->
+	
+	<bean id="marksbean1" class="Ass6.Marks">
+		<property name="marathi" value="90"></property>
+		<property name="hindi" value="80"></property>
+		<property name="english" value="77"></property>
+	</bean>
+
+	<bean id="marksbean2" class="Ass6.Marks">
+		<property name="marathi" value="98"></property>
+		<property name="hindi" value="75"></property>
+		<property name="english" value="56"></property>
+	</bean>
+
+	<bean id="studbean12" class="Ass6.Student">
+		<property name="sid" value="111"></property>
+		<property name="sname" value="Prasad"></property>
+	</bean>
+		
+</beans>

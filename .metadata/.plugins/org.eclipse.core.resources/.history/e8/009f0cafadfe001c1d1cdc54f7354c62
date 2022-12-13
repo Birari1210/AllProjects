@@ -1,0 +1,11 @@
+package com.springorm.model;
+
+
+//Student table :- sid, sname, father_name, mother_name, classid, add1, add2, pincode, 
+//aadharno, dob, date_of_admission.
+
+public class Student {
+
+	
+	
+}

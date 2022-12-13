@@ -1,0 +1,14 @@
+127.0.0.1 - - [31/May/2022:22:56:28 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:56:35 +0530] "GET /Spring_Mvc_Jdbc2/ HTTP/1.1" 200 318
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:56:35 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:56:47 +0530] "GET /Spring_Mvc_Jdbc2/addstudent HTTP/1.1" 200 2165
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:57:06 +0530] "POST /Spring_Mvc_Jdbc2/addstudent HTTP/1.1" 200 2475
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:57:24 +0530] "GET /Spring_Mvc_Jdbc2/addstudent HTTP/1.1" 200 2165
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:57:36 +0530] "GET /Spring_Mvc_Jdbc2/viewallstudent HTTP/1.1" 200 2356
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:57:45 +0530] "GET /Spring_Mvc_Jdbc2/editstudent/6 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:57:45 +0530] "GET /Spring_Mvc_Jdbc2/edits?id=6 HTTP/1.1" 200 2267
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:58:34 +0530] "GET /Spring_Mvc_Jdbc2/deletestudent/6 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:58:34 +0530] "GET /Spring_Mvc_Jdbc2/viewallstudent HTTP/1.1" 200 1856
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:58:41 +0530] "GET /Spring_Mvc_Jdbc2/viewallstudent HTTP/1.1" 200 1856
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:58:45 +0530] "GET /Spring_Mvc_Jdbc2/addstudent HTTP/1.1" 200 2165
+0:0:0:0:0:0:0:1 - - [31/May/2022:22:58:52 +0530] "POST /Spring_Mvc_Jdbc2/addstudent HTTP/1.1" 200 2475

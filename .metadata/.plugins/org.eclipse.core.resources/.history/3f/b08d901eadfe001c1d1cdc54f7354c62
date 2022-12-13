@@ -1,0 +1,5 @@
+package com.springorm.model;
+
+public class Student {
+
+}

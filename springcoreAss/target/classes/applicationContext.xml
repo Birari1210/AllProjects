@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- *****Assingment1******* -->
+	
+	<bean id="Assbean" class="com.springcore.ass1.Myclass" factory-method="getObjA">
+	</bean>
+	
+		<!-- *****Assingment2******* -->
+	
+	<bean id="avgBean" class="com.springcore.ass2.Average">
+	<property name="num1" value="39"> </property>
+	<property name="num2" value="50"> </property>
+	<property name="num3" value="40"> </property>
+	<property name="num4" value="50"> </property>
+    <property name="num5" value="60"> </property>
+	</bean>
+
+	<!--___________Ass- 3_________   -->
+
+	  <bean id="emiBean" class="com.springcore.Ass3.Emi">
+	  <property name="rate" value="10"></property>
+	  </bean>
+	  
+	<!--___________Ass- 4_________  
+  <bean id="department" class="com.springcore.Ass4.Department">
+   	<property name="department" value="Trainee"> </property>
+	</bean>
+   <bean id="empBean" class="com.springcore.Ass4.Employee" autowire="byType">
+   <property name="eID" value="111"> </property>
+   <property name="eName" value="prasad"> </property>
+   <property name="salary" value="10000"> </property>
+   <property name="Address" value="jalgaon"> </property>
+</bean>
+   -->
+	
+ <!-- Ass5 -->
+    <bean id="maxBean" class="com.springcore.ass5.Maximum">
+    <property name="numbers">
+    <list>
+          <value>30</value>
+          <value>20</value>
+          <value>50</value>
+          <value>40</value>
+          <value>10</value>
+    </list>
+    </property>
+  </bean>
+ 
+  <!-- Ass 6 -->
+  <bean id="beanass6" class="com.springcore.Ass6.StringAss6">
+  <constructor-arg>
+  <array>
+  <value>Prasad</value>
+  <value>Nilesh</value>
+  <value>Raj</value>
+  <value>Jay</value>
+  <value>prsdssn</value>
+  </array>
+  </constructor-arg>
+  </bean>
+  
+  <!-- ____Ass 7____________ -->
+  
+  <bean id="beanmerge2" class="com.springcore.ass7.Class2">
+  <constructor-arg>
+   <array>
+   <value>10</value>
+   <value>20</value>
+   <value>30</value>
+   <value>40</value>
+   </array>
+  </constructor-arg>
+  </bean>
+  
+   <bean id="beanmerge1" class="com.springcore.ass7.Class1">
+  <constructor-arg>
+   <array>
+   <value>110</value>
+   <value>120</value>
+   <value>130</value>
+   <value>140</value>
+   </array>
+  </constructor-arg>
+     <constructor-arg ref="beanmerge2"></constructor-arg> 
+  </bean>
+   
+
+<bean id="itembean8" class="com.springcore.ass8.Item">
+  <constructor-arg>
+ <list>
+  <value>Laptop</value>
+  <value>Mobile</value>
+  <value>Laptop</value>
+  <value>Mouse</value>
+  <value>Keybord</value>
+  </list>
+ </constructor-arg>
+ </bean>
+  
+  <!-- *********Assingment 9*********** 
+   <bean id="Citybean" class="com.springcore.ass9.City">
+		<property name="cityName" value="jalgaon"></property>
+		<property name="distance" value="500"></property>
+	</bean>
+  
+  <bean id="Citybean1" class="com.springcore.assin.City">
+		<property name="cityName" value="pune"></property>
+		<property name="distance" value="800"></property>
+	</bean>
+  -->
+ 
+  <bean id="bean10" class="com.springcore.ass10.Student">
+	<property name="stud">
+	<map> 
+	<entry key="prasad" value="222"></entry> 
+	<entry key="nilesh" value="444"></entry> 
+	<entry key="jaydeep" value="333"></entry> 
+	<entry key="tushar" value="111"></entry> 
+	</map>
+	</property>
+	</bean> 
+ 
+ 
+   <!-- assingment 11 -->
+ 
+  
+  <bean id="result1" class="com.springcore.ass11.Result">
+		<constructor-arg value="67" ></constructor-arg>
+		<constructor-arg value="78" ></constructor-arg>
+		<constructor-arg value="82" ></constructor-arg>
+		<constructor-arg value="91" ></constructor-arg>
+	</bean>
+
+	<bean id="student1" class="com.springcore.ass11.Student">
+		
+		<constructor-arg value="Prasad"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="1996/09/30"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="A"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result1" />
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="result2" class="com.springcore.ass11.Result">
+		<constructor-arg value="76" ></constructor-arg>
+		<constructor-arg value="88" ></constructor-arg>
+		<constructor-arg value="82" ></constructor-arg>
+		<constructor-arg value="96" ></constructor-arg>
+	</bean>
+
+	<bean id="student2" class="com.springcore.ass11.Student">
+		
+		<constructor-arg value="Nilesh"></constructor-arg>
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="1997/12/20"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="A"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result2" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="result3" class="com.springcore.ass11.Result">
+		<constructor-arg value="56" ></constructor-arg>
+		<constructor-arg value="65" ></constructor-arg>
+		<constructor-arg value="67" ></constructor-arg>
+		<constructor-arg value="61" ></constructor-arg>
+	</bean>
+
+	<bean id="student3" class="com.springcore.ass11.Student">
+		
+		<constructor-arg value="jay"></constructor-arg>
+		<constructor-arg value="3"></constructor-arg>
+		<constructor-arg value="1998/1/18"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="B"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result3" />
+		</constructor-arg>
+	</bean>
+	
+		<bean id="result4" class="com.springcore.ass11.Result">
+		<constructor-arg value="56" ></constructor-arg>
+		<constructor-arg value="65" ></constructor-arg>
+		<constructor-arg value="88" ></constructor-arg>
+		<constructor-arg value="83" ></constructor-arg>
+	</bean>
+
+	<bean id="student4" class="com.springcore.ass11.Student">
+	
+		<constructor-arg value="Rahul"></constructor-arg>
+			<constructor-arg value="4" type="int"></constructor-arg>
+		<constructor-arg value="1997/03/28"></constructor-arg>
+		<constructor-arg value="12th"></constructor-arg>
+		<constructor-arg value="C"></constructor-arg>
+		<constructor-arg>
+			<ref bean="result4" />
+		</constructor-arg>
+	</bean>
+	
+  <!-- ***********assingment 12************* -->
+
+	<bean id="employee1" class="com.springcore.ass12.Employee">
+		<property name="empId" value="101"></property>
+		<property name="empName" value="Nilesh patil"></property>
+		<property name="salary" value="25000"></property>
+		<property name="dept" ref="dept1"></property>
+	</bean>
+
+	<bean id="dept1" class="com.springcore.ass12.Department">
+		<property name="deptId" value="1"></property>
+		<property name="deptName" value="Account"></property>
+	</bean>
+
+	<bean id="employee2" class="com.springcore.ass12.Employee">
+		<property name="empId" value="102"></property>
+		<property name="empName" value="Prasad Birari"></property>
+		<property name="salary" value="21000"></property>
+		<property name="dept" ref="dept2"></property>
+	</bean>
+	<bean id="dept2" class="com.springcore.ass12.Department">
+		<property name="deptId" value="2"></property>
+		<property name="deptName" value="finance"></property>
+	</bean>
+
+	<bean id="employee3" class="com.springcore.ass12.Employee">
+		<property name="empId" value="103"></property>
+		<property name="empName" value="vijay kumar"></property>
+		<property name="salary" value="29000"></property>
+		<property name="dept" ref="dept3"></property>
+	</bean>
+	<bean id="dept3" class="com.springcore.ass12.Department">
+		<property name="deptId" value="2"></property>
+		<property name="deptName" value="finance"></property>
+	</bean>
+
+	<bean id="employee4" class="com.springcore.ass12.Employee">
+		<property name="empId" value="104"></property>
+		<property name="empName" value="amit pathak"></property>
+		<property name="salary" value="35000"></property>
+		<property name="dept" ref="dept4"></property>
+	</bean>
+	<bean id="dept4" class="com.springcore.ass12.Department">
+		<property name="deptId" value="1"></property>
+		<property name="deptName" value="Account"></property>
+	</bean>
+  
+  
+  <!-- Question 13 -->
+  
+  <bean id="ticketBean13" class="com.springcore.ass13.Collect">
+        <property name="moviename" value="KGF"></property>
+        <property name="showtime" value="3-6"></property>  
+        <property name="ticketPrice" value="250"></property>
+        <property name="businessincrore" value="1500 cr"></property>  
+    </bean>
+    
+  
+  
+
+<!--  Assingment 14  -->  
+<bean id="circleBean" class="com.springcore.ass14.Circle">
+<constructor-arg value="13" type="double"></constructor-arg>
+</bean>
+
+<bean id="squreBean" class="com.springcore.ass14.Square">
+<constructor-arg value="4" type="double"></constructor-arg>
+</bean>
+
+<bean id="rectBean" class="com.springcore.ass14.Rectangle">
+<constructor-arg value="24" type="double"></constructor-arg>
+<constructor-arg value="15" type="double"></constructor-arg>
+
+</bean>
+
+
+
+<!--**************15************-->
+
+  	<bean id="itemBean" class="com.springcore.ass15.Item">
+		<property name="itemname" value="thinkpadi5"></property>
+		<property name="price" value="50000"></property>
+	</bean>
+
+	<bean id="categorybean" class="com.springcore.ass15.Category">
+		<property name="type" value="Laptop"></property>
+	</bean>
+
+	<bean id="costem" class="com.springcore.ass15.Customer">
+		<property name="name" value="Prasad"></property>
+	    <property name="address" value="Jalgaon"></property>
+		
+		<property name="itemObj" ref="itemBean"></property>
+		<property name="categoryObj" ref="categorybean">
+		</property>
+	</bean>
+
+
+</beans>

@@ -1,0 +1,39 @@
+package Practise;
+
+import java.util.Iterator;
+
+public class MaxFreq {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s="pppppppprasssad";
+		
+		int max=0;
+		
+		int result[]= new int[2];
+		
+		for (int i = 0; i < s.length(); i++) {
+			
+			max=0;
+			for (int j = 0; j < s.length(); j++) 
+			{
+				if(s.charAt(i)==s.charAt(j))
+				{
+					max++;
+				
+			}
+			
+		}			
+		
+		if(max>result[0])
+		{
+			result[1]=max;
+			result[1]=i;
+			
+		}
+		}
+		System.out.println(result[0]+" "+s.charAt(result[1]));
+	}
+
+}

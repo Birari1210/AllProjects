@@ -1,0 +1,9 @@
+1652933963375	Move compilation unit
+1652956478348	Rename resource 'SpringServlet.xml'
+1652964804247	Move 'Index.jsp' to 'WEB-INF'
+1652964811029	Move 'Index.jsp' to 'test'
+1652964831834	Rename resource 'Web.xml'
+1652964977750	Move 'Index.jsp' to 'WEB-INF'
+1652965016442	Delete element
+1652965302145	Move 'index.jsp' to 'java'
+1652965310809	Move 'index.jsp' to 'main'

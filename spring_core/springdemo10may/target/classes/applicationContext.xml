@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="itembean" class="springdemo10may.Item">
+ <property name="iname" value="yellow formal shirt"></property>
+</bean> 
+<bean id="stubean" class="springdemo10may.Student">
+  <constructor-arg value="12345" type="int"></constructor-arg>
+</bean>
+<bean id="stubean2" class="springdemo10may.Student">
+  <constructor-arg value="sunil kumar" ></constructor-arg>
+</bean>
+<bean id="stubean3" class="springdemo10may.Student">
+  <constructor-arg value="dinesh kumar" ></constructor-arg>
+  <constructor-arg value="12346" type="int"></constructor-arg>
+</bean>
+<bean id="objadd" class="springdemo10may.Address">
+  <constructor-arg value="101/2 vallabh nagar"></constructor-arg>
+  <constructor-arg value="Indore"></constructor-arg>
+  <constructor-arg value="MP"></constructor-arg>
+</bean>
+
+<bean id="empbean" class="springdemo10may.Employee">
+  <constructor-arg value="101" type="int"></constructor-arg>
+  <constructor-arg value="Sunil kumar"></constructor-arg>
+  <constructor-arg>
+    <ref bean="objadd" />
+  </constructor-arg>
+</bean>
+<bean id="quebean" class="springdemo10may.Question">
+  <constructor-arg value="11" type="int"></constructor-arg>
+  <constructor-arg value="Capital of India" ></constructor-arg>
+  <constructor-arg>
+    <list>
+    <value>Indore</value>
+    <value>Bombay</value>
+    <value>Pune</value>
+    <value>New Delhi</value>
+    </list>
+  </constructor-arg>
+</bean>
+<bean id="cust1" class="springdemo10may.Customer">
+  <constructor-arg value="123" type="int"></constructor-arg>
+  <constructor-arg value="tushar soni"></constructor-arg>
+</bean>
+
+<bean id="custadd" class="springdemo10may.Address">
+  <constructor-arg value="306 vijay nagar"></constructor-arg>
+  <constructor-arg value="Pune"></constructor-arg>
+  <constructor-arg value="Maharastra"></constructor-arg>
+</bean>
+
+<bean id="cust2" class="springdemo10may.Customer" parent="cust1">
+  <constructor-arg ref="custadd"></constructor-arg>
+</bean>
+
+<bean id="cat" class="springdemo10may.Category">
+  <property name="catid" value="1010"></property>
+  <property name="catname" value="shirts"></property>
+</bean>
+
+<bean id="prodbean" class="springdemo10may.Product">
+ <property name="pid" value="1234"></property>
+ <property name="pname" value="yellow formal shirts"></property>
+ <property name="price" value="600"></property>
+ <property name="objCat" ref="cat"></property>
+</bean>
+
+<bean id="objCat32" class="com.yash.autowire.Category">
+  <property name="cid" value="456"></property>
+  <property name="cname" value="suit"></property>  
+</bean>
+<bean id="i2" class="com.yash.autowire.Item" autowire="byType"> 
+ <property name="id" value="12341"></property>
+ <property name="iname" value="green anarkali suit"></property>
+ <property name="price" value="1230"></property>
+</bean>
+
+<bean id="scobj" class="com.yash.autowire.StudentClass">
+  <property name="classname" value="12C"> </property>
+  <property name="roomno" value="15"> </property>
+</bean>
+
+<bean id="stobj" class="com.yash.autowire.Student" autowire="constructor">
+<constructor-arg value="110522123" type="int"></constructor-arg>
+<constructor-arg value="Ajay verma" ></constructor-arg>
+</bean>
+
+<bean id="obja" class="com.yash.factorymethod.A" factory-method="getObjA"></bean>
+
+<bean id="sfsobj" class="com.yash.factorymethod.ShapeFactoryStatic" factory-method="getShapeObject"></bean>
+
+<bean id="objsfns" class="com.yash.factorymethod.ShapeFactoryNonStatic">
+</bean>
+
+<bean id="shape2" class="com.yash.factorymethod.ShapeFactoryNonStatic" factory-method="getShapeObject" factory-bean="objsfns"></bean>
+
+
+</beans>

@@ -1,0 +1,123 @@
+package com.springAss2.main;
+
+import java.sql.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.springAss2.dao.ItemDao;
+import com.springAss2.model.Item;
+
+// Item :- itemid, iname, subcatid, price, dom (not null), date_of_expiry(null allowed), instock, discount
+
+public class Itemmain {
+	
+	public static void main(String[] args) {
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationcontext.xml");
+		ItemDao iObjdao = (ItemDao) ctx.getBean("itembean");
+		Item iobj = new Item();
+		
+//		Scanner sc = new Scanner(System.in);
+//		
+//		  System.out.println("Enter ItemId -");
+//		  iobj.setItemid(sc.nextInt());
+//		  System.out.println("Enter Item name -");
+//		  iobj.setItemName(sc.next());
+//		  System.out.println("Enter Item subCategory Id -");
+//          iobj.setSubcatid(sc.nextInt());
+//          System.out.println("Enter Item price -");
+//          iobj.setPrice(sc.nextDouble());
+//          System.out.println("Enter item date of manifactuare-");
+//          String s = sc.next();
+//          Date date1 = Date.valueOf(s);
+//          iobj.setDom(date1);
+//          System.out.println("Enter date of expiry-");
+//          String s1 =  sc.next();
+//          Date date2 = Date.valueOf(s1);
+//          iobj.setDoe(date2);
+//          System.out.println("Enter in stock item");
+//          iobj.setInstock(sc.nextInt());
+//          System.out.println("Enter item discount value");
+//          iobj.setDiscount(sc.nextInt());
+//          
+//    	  System.out.println("Result added in table count="+iObjdao.addItem(iobj));
+
+		
+//		List<Item> ilist = iObjdao.getDataByResultSetExtractor();
+//
+//		if (!ilist.isEmpty()) {
+//
+//			for (Item i : ilist) {
+//				System.out.println(i.toString());
+//
+//			}
+//		}
+		
+		System.out.println("1) ---------total number of item in each subcategory---------");
+		
+		Map<String, Integer> slist1 = iObjdao.getDataByResultSetExtractor1();
+		System.out.println("Total number of iteam in subcatagory = " + slist1);
+
+		System.out.println();
+		
+		System.out.println("--------------2) Find out total number of item in each category----------");
+		Map<String, Integer> slist2 = iObjdao.que2();
+		System.out.println("Total number of iteam in catagory = " + slist2);
+		
+		
+		
+		System.out.println("------------3) Find out total number of item which are out of stock------");
+
+		List<Integer> slist3 = iObjdao.que3();
+		System.out.println("Total number item  out of stock = " + slist3);
+		
+		
+		
+		System.out.println("--------------------4) items from each category which are out of stock------------");
+		Map<String, Integer> slist4 = iObjdao.que4();
+		System.out.println("Total number of item are out of stock in each catagory = " + slist4);
+		
+		
+		
+		System.out.println("----------------5) items which are out of stock-----------------");
+
+		List<Item> ilist5 = iObjdao.que5();
+
+		if (!ilist5.isEmpty()) {
+
+			for (Item i1 : ilist5) {
+				System.out.println(i1.toString());
+
+			}
+	}
+		
+		System.out.println("---------6) items which are having price greater than average marks---------");
+
+		List<Item> ilist6 = iObjdao.que6();
+		if (!ilist6.isEmpty()) {
+			for (Item e1 : ilist6) {
+				System.out.println(e1.toString());
+				
+
+			}
+
+		}
+		
+		System.out.println("------------------7) item which are having highest discount --------------------");
+		List<Integer> elist7 = iObjdao.que7();
+		System.out.println("Item which are having highest discount = " + elist7.toString());
+
+		List<Item> elist71 = iObjdao.que71();
+		if (!elist71.isEmpty()) {
+			for (Item e1 : elist71) {
+				System.out.println(e1.toString());
+						
+			}
+   }
+	
+}
+}

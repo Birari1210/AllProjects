@@ -1,0 +1,37 @@
+package jdbcAss.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import jdbcAss.Item;
+import jdbcAss.Test.ItemDAO;
+
+public class ItemMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ApplicationContext objAC = new ClassPathXmlApplicationContext("applicationcontext.xml");
+		  
+		  ItemDAO objidao = (ItemDAO) objAC.getBean("itembeandao");
+		  Item itemobj = new Item();
+		  
+//		  //itemobj.setItemNo(112);
+//		  itemobj.setIname("smartMI");
+//		  itemobj.setCategory("Watch");
+//		  itemobj.setCompany("MI");
+//		  
+//		  System.out.println("Item table Row are inseted  ="+objidao.addItem(itemobj));
+
+//		  itemobj.setItemNo(113);
+//		  itemobj.setIname("LG_lcd");
+//		  itemobj.setCategory("TV");
+//		  itemobj.setCompany("LG");
+//		  
+//		  System.out.println("Item  data is update : "+objidao.updateItem(itemobj));
+//		  
+		  
+	//	  System.out.println("record deleted count :- "+objidao.DeleteItem(113));
+
+	}
+}

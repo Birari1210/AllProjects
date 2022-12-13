@@ -1,0 +1,28 @@
+package ArrayStringAssingment13oct;
+
+public class Akash {
+
+	public static void main(String[] args)
+	{
+		int num=28;
+		int a[] = {28,3,4,5,6,7,9,10};
+		int sum=0;
+		int count=0;
+		for(int i=1;i<a.length;i++)
+		{
+			sum=0;
+			if(a[i]%i==0)
+			{
+				sum= sum + i;
+			}
+			if(sum==a[i])
+			{
+				count++;
+			}
+		}
+		
+		System.out.println("count "+count);
+		
+	}
+
+}
