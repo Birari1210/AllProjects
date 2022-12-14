@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Gym Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body style="background-color: MistyRose;">
+	<h4>update trainer form</h4>
+	<div class="container" align="center">
+		<form action="#" th:action="@{/updatetrainer}" th:object="${trainer}" method="post">
+
+			<input type="hidden" th:field="*{tid}" />
+
+			<!-- <input type="text" th:field="*{tid}" placeholder="Enter trainer id" class="form-control mb-4 col-4"/> -->
+			
+			<label for="name">Enter Trainer Name</label> 
+			<input type="text" th:field="*{name}" placeholder="Enter trainer Name" class="form-control mb-1 col-4">
+				
+			<label for="CouresName">Enter coures Name</label>	 
+			<input type="text" th:field="*{couresName}" placeholder="Enter Course Name" class="form-control mb-1 col-4" />
+			<label for="CouresName">gender</label>
+			<input type="text" th:field="*{gender}" placeholder="Enter gender" class="form-control mb-1 col-4" /> 
+			
+			<label for="CouresName">Enter age</label> 
+			<input type="text" th:field="*{age}" placeholder="Enter age" class="form-control mb-1 col-4" />
+				
+			 <label for="CouresName">Enter trainer Date of Join </label> 
+				<input type="date" th:field="*{dateOfJoin}" class="form-control mb-1 col-4" /> 
+			
+			<label for="CouresName">Address</label>
+			<input type="text" th:field="*{address}" placeholder="Enter address" class="form-control mb-1 col-4" /> 
+			
+				
+			<label for="CouresName">MobileNo</label> 
+			<input type="text" th:field="*{mobileNo}"class="form-control mb-1 col-4" />
+			
+			 <label for="CouresName">Enter Email</label>	
+			 <input type="text" th:field="*{email}" class="form-control mb-1 col-4" />
+			 
+			 <label for="CouresName">Enter password</label>
+			<input type="text" th:field="*{password}" class="form-control mb-1 col-4" />
+	
+
+			<button type="submit" class="btn btn-info col-2">Update Trainer</button>
+
+</form>
+
+			<!-- 
+   <div class="form-group" >
+   <input type="text" name="name"  required/><br>
+   </div>
+     
+   <div class="form-group">
+   <input type="text" name="couresName" required/><br>
+   </div>
+   
+   <div class="form-group">
+   <label for="CouresName">Enter coures Name</label>
+   <input type="text" name="gender" required/><br>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter age</label>
+   <input type="text" name="age"  required/><br>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter Address</label>
+   <input type="text" name="address"required/><br>
+   </div>
+   <div class="form-group">
+   <label for="mobNo">Enter mob number</label>
+   <input type="text" name="mobileNo" required/><br>
+   </div>
+   <div class="form-group">
+    <label for="Email">Enter Email</label>
+   <input type="text" name="email" required/><br>
+   </div>
+   <div class="form-group">
+    <label for="pass">Password</label>
+   <input type="text" name="password" required/><br>
+   </div>
+  
+   <div class="form-group">
+   <label for="Joindate">Enter date of joining</label>
+   <input type="text" name="dateOfJoin" required/><br>
+   </div>
+   
+   <button name="register" class = "btn btn-primary" type="submit">Update</button><br>
+   
+</form>
+ -->
+	</div>
+</body>
+</html>

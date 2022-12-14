@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+
+<link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+    </script>
+
+</head>
+<body style="background-color:powderblue;">
+<p>User Registration form</p>
+ 
+ <div class="container" align="center">
+
+<div class="row col-md-5 col-md-offset-5">
+
+
+  
+<form action="/Saveuser">  
+   <div class="form-group" >
+   <label for="name">Enter first Name</label>
+   <input type="text" name="fname" placeholder="enter first your name" required>
+   </div>
+   
+   <div class="form-group">
+   <label for="name">Enter Name</label>
+   <input type="text" name="lname" placeholder="enter last your name" required>
+   </div>
+   
+   <div class="form-group">
+    <label for="Address">Address</label>
+   <input type="text" name="address" placeholder="enter your Address" required/>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter age</label>
+   <input type="text" name="age" placeholder="enter your age" required/>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter gender</label>
+   <input type="text" name="gender" placeholder="enter gender" required/>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter courseName</label>
+   <input type="text" name="courseName" placeholder="enter course Name" required/>
+   </div>
+       
+   <div class="form-group">
+   <label for="Age">Enter course Duration</label>
+   <input type="text" name="courseDuration" placeholder="enter course Duration" required/>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter Course Fee</label>
+   <input type="text" name="courseFees" placeholder="enter  Course Fee" required/>
+   </div>
+   
+   
+   <div class="form-group" >
+   <label for="name">Enter  Mobile number</label>
+   <input type="text" name="mobileNo" placeholder="enter mobile number" required/>
+   </div>
+   
+   <div class="form-group">
+    <label for="Email">Enter Email</label>
+   <input type="text" name="email" placeholder="enter your email" required/><br>
+   </div>
+   <div class="form-group">
+    <label for="pass">Password</label>
+   <input type="text" name="password" placeholder="enter your password" required/><br>
+   </div>
+   <div class="form-group">
+   <label for="Joindate">Enter date of joining</label>
+   <input type="text" name="dateOfJoin" placeholder="enter date of joining" required/><br>
+   </div>
+   
+   <button name="register" type="submit">Register</button>
+</form>
+</div>
+</div>
+
+
+
+<!-- 
+<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+			
+				<h1>Registration</h1>
+
+				<form action="@{/Saveuser}" method="post"> <!-- @ user
+					<div class="form-group">
+						<label class="control-label" for="uid"> enter user id  </label>
+						<input id="uid" class="form-control"  th:placeholder="Enter id"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="firstname"> Enter Name </label> 
+						<input id="fname" class="form-control" th:field="*{fname}"
+							required autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="lastname"> Enter last Name </label> 
+						<input
+							id="lname" class="form-control" th:field="*{lname}"
+							required autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="firstname"> Enter Address  </label>
+						 <input id="address" class="form-control" th:field="*{address}"
+							required autofocus="autofocus" />
+					</div>
+					
+					
+					<div class="form-group">
+						<label class="control-label" for="firstname"> Enter age </label>
+						 <input
+							id="age" class="form-control" th:field="*{age}"
+							required autofocus="autofocus"/>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="firstname"> Mob no </label> 
+						<input
+							id="mobileNo" class="form-control" th:field="*{mobileNo}"
+							required autofocus="autofocus" />
+					</div>
+					
+					
+
+					<div class="form-group">
+						<label class="control-label" for="email"> Email </label> 
+						<input
+							id="email" class="form-control" th:field="*{email}" required
+							autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="password"> Password </label> 
+						<input
+							id="password" class="form-control" type="password"
+							th:field="*{password}" required autofocus="autofocus" />
+					</div>
+
+                   <div class="form-group">
+						<label class="control-label" for="dateOfjoin"> date of join </label> 
+						<input
+							id="dateOfJoin" class="form-control" th:field="*{dateOfJoin}"
+							required autofocus="autofocus" />
+					</div>
+
+					<button type="submit">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
+ -->
+ 
+
+</body>
+</html>

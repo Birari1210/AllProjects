@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User list html page</title>
+</head>
+<body bgcolor="powderblue">
+<a href="/">Back</a>
+<h3 align="center" >Usernames and Passwords,,,</h3>
+<table align="center" border="1" cellpadding="5" cellspacing="5">
+<tr>
+<th>ID</th>
+<th>UserName</th>
+<th>Password</th>
+</tr>
+<tr th:each="objst:${ulist}">
+<td><span th:text="${objst.id}" ></span></td>
+<td><span th:text="${objst.userName}" ></span></td>
+<td><span th:text="${objst.password}"></span></td>
+</tr>
+</table>
+
+</body>
+</html>

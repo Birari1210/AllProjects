@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color: MistyRose;">
+
+<h2>User Data </h2>
+
+<div style="margin:0 auto; width:800px;">
+<table  border="2" cellpadding="3">
+		 	<thead class = "table-dark">
+				<tr>
+					<th> UserID </th>
+					<th> User First Name</th>
+					<th> User last Name</th>
+					<th> Address </th>
+					<th> age</th>
+					<th> Mobile Number</th>
+					<th> User Email</th>
+					<th> date Of join</th>
+				</tr>
+		      </thead>
+				
+		           <tr th:each="objht:${Show}">	
+		   	
+					<td th:text = "${objht.uid}"></td>
+					<td th:text = "${objht.fname}"></td>
+					<td th:text = "${objht.lname}"></td>
+					<td th:text = "${objht.address}"></td>
+					<td th:text = "${objht.age}"></td>
+					<td th:text = "${objht.mobileNo}"></td>
+					<td th:text = "${objht.email}"></td>
+					<td th:text = "${objht.dateOfJoin}"></td>		
+				</tr>
+		</table>
+</div>
+
+</body>
+</html>

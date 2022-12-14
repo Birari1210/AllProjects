@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h4>attendance details </h4>
+<table  border="3" cellpadding="3" >  
+		  <thead class = "table-dark">
+				<tr>
+					<th>Trainer ID</th>
+					<th>Trainer Name</th>
+					<th>Date</th>
+					<th>Attendance Status</th>
+					<th>Approve Attendance</th>
+				</tr>
+			</thead>
+				
+				<tr th:each="atable:${attend}">
+					<td th:text = "${atable.tId}"></td>
+					<td th:text = "${atable.name}"></td>
+					<td th:text = "${atable.date}"></td>
+					<td th:text = "${atable.MarkAttendace}"></td>	
+					<td th:text = "${atable.approve}"></td>
+					
+
+		       </tr>			
+	</table>	
+
+</body>
+</html>

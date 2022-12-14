@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Trainer Details</title>
+</head>
+<body style="background-color: MistyRose;">
+
+<div align="center">
+<h4>Trainers Information </h4>
+</div>
+  	 	
+ <div style="margin:0 auto; width:800px;">
+  <table  border="2" cellpadding="3" >
+				<tr>
+					<th> Trainer ID </th>
+					<th> Trainer Name</th>
+					<th> Trainer course Name</th>
+					<th> Gender </th>
+					<th> age</th>
+				    <th> Address </th>
+					<th> Mobile Number</th>
+					<th> Trainer Email</th>
+					<th> date Of join</th>
+					<th> Update Trainer details </th>
+				</tr>
+				
+<!-- ******** name add karayache ahe table feild che ******** -->
+				
+		            <tr th:each="objtable:${ViewTrainer}">	
+					<td th:text = "${objtable.tid}"></td>
+					<td th:text = "${objtable.name}"></td>
+					<td th:text = "${objtable.couresName}"></td>
+					<td th:text = "${objtable.gender}"></td>
+			        <td th:text = "${objtable.age}"></td>
+					<td th:text = "${objtable.address}"></td>
+					<td th:text = "${objtable.mobileNo}"></td>
+					<td th:text = "${objtable.email}"></td>
+					<td th:text = "${objtable.dateOfJoin}"></td>
+				<td> <a th:href="@{editTrainer/{id}(id=${objtable.tid})}"> Update Trainer</a></td>
+				</tr>
+		</table>
+</div>
+  	 	
+</body>
+</html>

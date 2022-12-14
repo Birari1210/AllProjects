@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Diet table</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body style="background-color:ligth;">
+	<div class="container" align="center">
+<h4> Table For Trainer...</h4>
+</div><br>
+<div style="margin:0 auto; width:1000px;">
+ 
+ <table  border="3" cellpadding="3" >  
+		  <thead class = "table-dark">
+				<tr>
+					<th>Days</th>
+					<th>Breakfast</th>
+					<th>Lunch </th>
+					<th>LateEvening</th>
+					<th>Dinner</th>
+					<th>Update Diet chart</th>
+					<th>Delete Diet Chart</th>
+				</tr>
+			</thead>
+				
+				<tr th:each="dtable:${show}">
+					<span><td th:text = "${dtable.days}"></td></span>
+					<span><td th:text = "${dtable.breakfast}"></td></<span>
+					<span><td th:text = "${dtable.lunch}"></td></span>
+					<span><td th:text = "${dtable.lateEvening}"></td></span>
+					<span><td th:text = "${dtable.dinner}"></td></span>	
+		<span> <td><a th:href = "@{/AddDietChart/{id}(id=${dtable.days})}" class="btn btn-warning btn-sm mb-1">update Diet </a></td></span>
+	    <span> <td><a th:href = "@{/deleteDiet/{id}(id=${dtable.days})}" class="btn btn-danger btn-sm mb-1">delete diet </a><td></span>
+	       </tr>			
+	</table>
+	<div class="container" align="center">
+	<a th:href = "@{/addDiet}" class="btn btn-primary btn-sm-8 mb-7"> Add DietPlan </a>
+	</div>
+</div>
+</body>
+</html>

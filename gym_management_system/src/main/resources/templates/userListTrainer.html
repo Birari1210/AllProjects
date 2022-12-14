@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color: beige;">
+
+<h4>Trainer view all user Details</h4>
+<div style="margin:0 auto; width:800px;">
+<table  border="2" cellpadding="3" >
+		 	<thead class = "table-dark">
+				<tr>
+					<th> UserID </th>
+					<th> User First Name</th>
+					<th> User last Name</th>
+					<th> Address </th>
+					<th> age</th>
+					<th> Mobile Number</th>
+					<th> User Email</th>
+					<th> date Of join</th>
+				</tr>
+		      </thead>
+				
+		         <tr th:each="objht:${Show}">	
+		   	
+					<span><td th:text = "${objht.uid}"></td></span>
+					<span><td th:text = "${objht.fname}"></td></span>
+					<span><td th:text = "${objht.lname}"></td></span>
+					<span><td th:text = "${objht.address}"></td></span>
+					<span><td th:text = "${objht.age}"></td></<span>
+					<span><td th:text = "${objht.mobileNo}"></td></span>
+					<span><td th:text = "${objht.email}"></td></span>
+					<span><td th:text = "${objht.dateOfJoin}"></td></span>
+					
+				</tr>
+		</table>
+</div>
+
+
+</body>
+</html>

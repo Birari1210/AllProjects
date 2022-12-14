@@ -1,0 +1,224 @@
+package com.project.sma.controller;
+
+
+
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.project.sma.model.Bill;
+import com.project.sma.model.Employee;
+import com.project.sma.model.Stock;
+import com.project.sma.model.User;
+import com.project.sma.service.BillService;
+import com.project.sma.service.EmployeeService;
+import com.project.sma.service.OfferService;
+import com.project.sma.service.StockService;
+import com.project.sma.service.UserService;
+
+@Controller
+public class MasterController {
+
+	@Autowired
+	StockService objservice;
+
+	@Autowired
+	BillService objBill;
+
+	@Autowired
+	UserService objUservice;
+
+	@Autowired
+	OfferService objOffer;
+
+	@Autowired
+	EmployeeService eservice;
+	@Autowired
+	JdbcTemplate objjdbc;
+
+	int update_id;
+	int before_quantity;  
+	
+	// -----------------------------------Mapping
+
+	@RequestMapping("/")
+	public String home() {
+		return "index"; // home  add one another page and try with sequrity..?
+	}
+	
+// ------------------------------Employee Controller-----------------------------------------------
+	
+		@RequestMapping("/employee")
+		public String employee(Employee employee) {
+			return "addEmployee";
+		}
+
+			@RequestMapping(value="/saveEmployee" ,method=RequestMethod.GET)
+			public String addEmployee(@ModelAttribute Employee objemployee )
+			{
+				eservice.addEmployee(objemployee);
+				return "redirect:/showEmployee";
+			}
+		
+	// ------------------- Display list of emp------------------------------------------------------
+			
+		@RequestMapping("/showEmployee")
+		public ModelAndView showEmployee() {
+			ModelAndView objview = new ModelAndView();
+			objview.setViewName("employeelist");
+			objview.addObject("elist", eservice.allEmployee());
+			return objview;
+		}
+
+//------------------------------User Controller--addUser--------------
+	@RequestMapping("/addUser")
+	public String newUser() {
+		return "addUser";
+	}
+
+	@RequestMapping(value = "/saveUser", method = RequestMethod.GET) // mapping error
+	public String adduser(@ModelAttribute User objuser) {
+		
+		// System.out.println("im in save user");
+		objUservice.saveUser(objuser);
+		return "redirect:/showUser";
+	}
+
+	@RequestMapping("/showUser")
+	public ModelAndView viewAllUser() {
+		ModelAndView objmv = new ModelAndView();
+		objmv.setViewName("userlist");
+		objmv.addObject("ulist", objUservice.showAllUser());
+		return objmv;
+	}
+
+	// changes-------------------------------------------
+	@RequestMapping("/enterStock")
+	public String enterStockDetails(Stock stock) {
+		return "addStock";
+	}
+
+	// products------------------------------
+		@RequestMapping("/viewAllItem")
+		public ModelAndView viewAllItems() {
+			ModelAndView objmv = new ModelAndView();
+			objmv.setViewName("itemlist");
+			objmv.addObject("ilist", objservice.getAllitems());
+			return objmv;
+		}
+	
+	// ------------------------------------------------------
+	@RequestMapping(value = "/saveItem", method = RequestMethod.GET)
+	public String saveItemdetails(Stock objstock, BindingResult bsr) {
+		objstock.setTotalPrice(objstock.getPrice() * objstock.getQuantity());  // totalprice in stock tables and getQuantity of your product
+		
+		objstock.setTotalSalePrice(objstock.getSalePrice() * objstock.getQuantity());
+
+		if (bsr.hasErrors())
+			return "addStock";
+		else {
+			objservice.saveStock(objstock);
+			return "redirect:/viewAllItem";
+		}
+	}
+
+	
+	// ok-------------------------------
+	@GetMapping("/updateItem/{id}")
+	public String updateItem(@PathVariable(value = "id") int id, Model m) {
+		Stock objStock = objservice.getItemById(id);
+		before_quantity = objStock.getQuantity();      //store one by one id variable for update and store in before quantity....  
+		m.addAttribute("stock", objStock);
+		return "updateItem";
+	}
+
+	
+/// update	Stocks  #task add validation
+		@PostMapping("/updateStock")
+	    public String addItem(@ModelAttribute("stock") Stock objStock)
+	 	{     
+			int quan=objStock.getQuantity();
+			int totalquan=quan + before_quantity;
+					
+			objStock.setQuantity(totalquan);
+			objStock.setTotalSalePrice(objStock.getQuantity()*objStock.getSalePrice());
+			objStock.setTotalPrice(objStock.getQuantity()*objStock.getPrice());
+	
+			 objservice.saveStock(objStock);
+			 return "redirect:/viewAllItem";  // and update item... by id
+	    }
+	
+	// ------------------------------
+	@RequestMapping("/showStock")
+	public String showStock() {
+		return "showStock";
+	}
+
+	
+
+// -------------------- bills controller totals --------------------------------
+
+	@RequestMapping("/showallbills")
+	public ModelAndView showAllBills()
+	{
+		ModelAndView objmv= new ModelAndView();
+		objmv.setViewName("allBills");   // all bills.html are returning to show bills        
+		objmv.addObject("allbill", objBill.getAllBills());
+		return objmv;
+		
+	}
+	@GetMapping("/viewBill/{id}")
+	public String viewAllBills(@PathVariable(value="id") int id ,Model m)
+	{
+		
+		m.addAttribute("bills", objBill.showbillbyId(id));
+		return "showbiilbyId";
+	}
+	
+	
+	//---------------------------sale item -----------------------------------------
+		@GetMapping("/saleItem/{id}")
+		public String saleItem(@PathVariable(value="id") int id, Model m)
+		{
+			update_id=id;//used for update		
+			Stock objStock=objservice.getItemById(id);
+			m.addAttribute("stock", objStock);		
+			return "Bill";
+		}
+	//-------------------------Bill Modeule-------------------------------------ok work
+		@PostMapping("/generateBill")
+		public String generateBill(@ModelAttribute Bill objbill,Model m)
+		{	
+			Stock obj1= objservice.getItemById(update_id);       
+			obj1.setQuantity(obj1.getQuantity()-objbill.getQuantity()); //updating quantity 	
+			obj1.setTotalPrice(obj1.getPrice()*obj1.getQuantity());
+			obj1.setTotalSalePrice(obj1.getSalePrice()*obj1.getQuantity());	
+			objservice.saveStock(obj1);
+			
+			
+		//		System.out.println("********************My Quantity is updated and try to add in my db ************* ");
+			objbill.setBillDate(LocalDate.now());
+			objbill.setTotalValue(objbill.getFinalPrice() * objbill.getQuantity());		
+			objBill.generateBill(objbill);	
+			
+			//------------------------------showing bill----------------------
+
+			int billId= objbill.getBilNo();		
+			Bill obj2= objBill.getBillByNo(billId);
+			m.addAttribute("bill",obj2);		
+			return "showBill";     // all  table bill data show in html format
+				
+		}
+}

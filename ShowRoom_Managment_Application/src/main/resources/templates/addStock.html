@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head  xmlns:th="http://www.thymeleaf.org">
+<meta charset="ISO-8859-1">
+<title>add stock</title>
+</head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <body style="background-color:powderblue;">
+    <a href="/">Home</a>
+    <form action="#" th:action="@{/saveItem}" th:object="${stock}" method="get">
+    <h2>Enter Vehicle & Parts Details for Show Room.....</h2>
+    <table align="center">
+    <tr>
+    <td>Car Model/Part Name:</td>
+    <td><input type="text" th:field="*{itemName}" placeholder="Hexa"/></td>
+    </tr>           
+    <tr>
+    <td>Company Name</td>
+    <td><input type="text" name="company" th:field="*{company}" placeholder="TATA"/></td>
+   </tr>
+   <tr>
+    <td>Enter Quantity</td>
+    <td><input type="text" name="quantity" placeholder="no. of quantity "  th:field="*{quantity}"/></td>
+   </tr>
+    <tr>
+    <td>Enter price</td>
+    <td><input type="text" name="price" placeholder="100" th:field="*{price}" value="0"/></td>
+   </tr>
+     <tr>
+    <td>Enter salePrice</td>
+    <td><input type="text" name="salePrice" th:field="*{salePrice}" placeholder="140"  value="0"></td>
+   </tr>
+   <tr>
+   <td colspan="5" ><input type="submit" value="save"/></td>      
+    </tr>                         
+    </table>
+    </form>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+<body style="background-color: MistyRose;">
+<br>
+<div align="center">
+<p>Admin Create courses details Or package and edit delete the course</p>
+</div>
+
+	<table class = "table table-striped table-bordered"  >
+		  <thead class = "table-light">
+				<tr>
+					<th>Course Id</th>
+					<th> Course Name</th>
+					<th> TrainerName </th>
+					<th>One Month Fee</th>
+					<th>One year Fee</th>
+					<th>Update Course</th>
+					<th>Delete Course</th>
+				</tr>
+			</thead>
+				
+				<tr th:each="ctable:${Display}">
+					<span><td th:text = "${ctable.cid}"></td></span>
+					<span><td th:text = "${ctable.courseName}"></td></span>
+					<span><td th:text = "${ctable.trainerName}"></td></span>
+					<span><td th:text = "${ctable.monthlyFees}"></td></span>
+					<span><td th:text = "${ctable.yearlyFees}"></td></span>	
+			<td><a th:href = "@{/editCourses/{id}(id=${ctable.cid})}" class="btn btn-warning btn-sm mb-1">update courses </a>
+			<td><a th:href = "@{/delete/{id}(id=${ctable.cid})}" class="btn btn-danger btn-sm mb-1">delete courses </a><td>
+					
+				</tr>			
+	</table>
+	<div align="center"> <p>Add New Courses</p>
+	<a th:href = "@{/addCoursess}" class="btn btn-primary btn-sm mb-3"> Add courses </a>
+	</div>
+</body>
+</html>

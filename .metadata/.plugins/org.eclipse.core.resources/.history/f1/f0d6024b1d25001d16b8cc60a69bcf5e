@@ -1,0 +1,65 @@
+package com.project.blog.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.project.blog.entity.User;
+import com.project.blog.payroll.UserDto;
+import com.project.blog.repositories.UserRepo;
+import com.project.blog.service.UserService;
+
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepo userRepo;
+	
+	@Override
+	public UserDto createUser(UserDto user) {
+
+		this.userRepo.save(user);
+		
+		return null;
+	}
+
+	@Override
+	public UserDto updateUser(UserDto user, Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserDto getUserbyId(Integer UserId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UserDto> getAllUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteUser(Integer UserId) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private User dtoToUser(UserDto userDto)   //check once again
+	{
+		User user = new User();
+		user.setId(userDto.getId());
+		user.setName(userDto.getName());
+		user.setPassword(userDto.getPassword());
+		user.setEmail(userDto.getEmail());
+		user.setAbout(userDto.getAbout());
+		
+		return user;
+				
+	}
+	
+	
+	
+
+	}

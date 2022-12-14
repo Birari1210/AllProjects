@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table th:each="objst:${alist}" align="center">
+<tr>
+<td>User Name</td>
+<td><span input type="text" name="ano" th:text="${objst.ano}"></span></td>
+</tr>
+<tr>
+<td>Course name</td>
+<td><span input type="text" th:text="${objst.tId}" name="tId"></span></td>
+</tr>
+<tr>
+<td>Course duration</td>
+<td><span input type="text" th:text="${objst.name}" name="name"></span></td>
+</tr>
+<tr>
+<td>Course Fees</td>
+<td><span input type="text" th:text="${objst.date}" name="date"></span></td>
+</tr>
+<tr>
+<td>Course duration</td>
+<td><span input type="text" th:text="${objst.approve}" name="approve"></span></td>
+</tr>
+</body>
+</html>

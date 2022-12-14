@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>	
+  		
+ 	
+<form action="#" th:action="@{/savepayement}" method="post">
+<!-- 
+<p>    th:object="${ulist}"
+Course id
+<input type="text" name="courseId" ></p>
+<p>Course Fees
+<input type="text" name="courseFees" th:field="*{courseFees}"></p>
+<p> User Name
+<input type="text" name="fname" th:field="*{fname}"></p>
+<p>Course Fees paid date
+<input type="text" name="dateOfPayment"></p>
+<button type="submit" name="save">Save</button> 
+
+
+
+<p>Course duration
+<input type="text" name="varaiblename" th:field=*{courseName}></p>
+-->
+ <table th:each="objst:${ulist}" align="center">
+<tr>
+<td>User Name</td>
+<td><span input type="text" name="fname" th:text="${objst.fname}"></span></td>
+</tr>
+<tr>
+<td>Course name</td>
+<td><span input type="text" th:text="${objst.courseName}" name="courseName"></span></td>
+</tr>
+<tr>
+<td>Course duration</td>
+<td><span input type="text" th:text="${objst.courseDuration}" name="courseDuration"></span></td>
+</tr>
+<tr>
+<td>Course Fees</td>
+<td><span input type="text" th:text="${objst.courseFees}" name="courseFees"></span></td>
+</tr>
+<tr>
+<td>Enter Payement</td>
+<td><input type="text" name="payement"></td>
+</tr>
+<tr>
+<td><button type="submit" name="save">Save</button></td>
+ </tr>
+</table> 
+
+</form>
+</body>
+</html>

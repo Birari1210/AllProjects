@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div style="margin:0 auto; width:800px;">
+<table  border="2" cellpadding="3" >
+	
+		  <thead class = "table-light">
+				<tr>
+					<th>Payment Id</th>
+					<th> Course Name</th>
+					<th> Course Id </th>
+					<th>course Fees</th>
+					<th> Fees Type</th>
+					<th>User Name</th>
+					<th> Date </th>
+				</tr>
+			</thead>
+				<tr th:each="ptable:${pay}">
+					<span><td th:text = "${ptable.pid}"></td></span>
+					<span><td th:text = "${ptable.courseName}"></td></<span>
+				    <span><td th:text = "${ptable.courseId}"></td></<span>		
+					<span><td th:text = "${ptable.courseFees}"></td></span>
+					<span><td th:text = "${ptable.feesType}"></td></span>
+					<span><td th:text = "${ptable.userName}"></td></<span>
+					<span><td th:text = "${ptable.dateOfPayment}"></td></span>	
+			 </tr>			
+	</table>
+	</div> <!-- int pid;
+	String courseName;
+	int courseId;
+	double courseFees;
+	String feesType;
+	String fname;
+	String dateOfPayment;   
+    int courseDuration;                // changes kele ahet -->
+    
+</body>
+</html>

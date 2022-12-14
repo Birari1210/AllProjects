@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Diet plan</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+
+<body style="background-color: lightgray;">
+<div class="center">
+	<div class="container" align="center">
+		<h2>Add Diets</h2>
+
+		<form action="#" th:action="@{/saveDietPlan}" th:object="${diet}" method="post"> <!-- ace ha add attribute cha object ahe -->
+			
+			<lable> Enter day number</lable>
+			<input type="text" th:field="*{days}"
+				placeholder="Enter day" class="form-control mb-2 col-4">
+
+         <lable> Enter BreakFast Menu</lable>
+			<input type="text" th:field="*{breakfast}" placeholder="Enter BreakFast Menu" class="form-control mb-2 col-4">
+
+         <lable>Enter lunch Menu</lable>
+			<input type="text" th:field="*{lunch}" placeholder="Enter lunch Menu"
+				class="form-control mb-2 col-4">
+		<lable> Enter LateEvening Menu</lable>
+			<input type="text" th:field="*{lateEvening}" placeholder=" Enter LateEvening Menu"
+				class="form-control mb-2 col-4">
+				
+				<lable> Enter dinner Menu</lable>
+			<input type="text" th:field="*{dinner}" placeholder=" EnterEnter dinner Menu" class="form-control mb-2 col-4">
+				
+			<button type="submit" class="btn btn-primary col-2">Diet add</button>
+		</form>
+		<br>
+     
+		<a th:href="@{/}"> Back home page</a>
+	</div>
+	</div>
+</body>
+</html>

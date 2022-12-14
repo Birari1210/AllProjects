@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Courses page</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+
+<body>
+<div class="center">
+	<div class="container" align="center">
+		<h2>Add Coursess</h2>
+
+		<form action="#" th:action="@{/saveCoursess}" th:object="${course}" method="post"> <!-- ace ha add attribute cha object ahe -->
+			
+			<lable> Enter Course Name</lable>
+			<input type="text" th:field="*{courseName}"
+				placeholder="Enter course Number" class="form-control mb-2 col-4">
+
+         <lable> Enter Trainer Name</lable>
+			<input type="text" th:field="*{trainerName}"
+				placeholder="Enter Trainer Name" class="form-control mb-2 col-4">
+
+         <lable> Enter monthly fees</lable>
+			<input type="number" th:field="*{monthlyFees}" placeholder="Enter monthly fees"
+				class="form-control mb-2 col-4">
+		<lable> Enter Yearly Fees</lable>
+			<input type="number" th:field="*{yearlyFees}" placeholder="Enter date Of Add"
+				class="form-control mb-2 col-4">
+				
+			<button type="submit" class="btn btn-info col-2">Add Details</button>
+		</form>
+		<br>
+     
+		<a th:href="@{/}"> Back home page</a>
+	</div>
+	</div>
+</body>
+
+</html>

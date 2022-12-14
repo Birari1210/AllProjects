@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body style="background-color:lavender;">
+
+<h4>Check And Approve Attendance</h4>
+
+
+
+<form action="#" th:action="@{/attendSave}" th:object="${attends}" method="post"> 
+			
+			<input type="hidden" th:field="*{ano}"/>	
+			<input type="hidden" th:field="*{tId}"/>
+			<input type="hidden" th:field="*{name}"/>
+			<input type="hidden" th:field="*{date}"/>
+			<label>Attendance Status</label>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+			<input type="text" th:field="*{MarkAttendace}" > <br>
+            <label>Approve Attendance</label>&nbsp; &nbsp;&nbsp;
+			<input type="text" th:field="*{approve}">
+			<div align="left">    &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+			<button type="submit" class="btn btn-warning">Approve</button>
+			</div>
+		</form>
+</body>
+</html>

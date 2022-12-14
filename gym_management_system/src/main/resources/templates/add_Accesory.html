@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Accessory Page</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<hr>
+		<h2>Add Accessory</h2>
+
+		<form action="#" th:action="@{/addAccessory}" th:object="${ace}" method="post"> <!-- ace ha add attribute cha object ahe -->
+			<lable>Accessory Number</lable>
+			<input type="text" th:field="*{aid}"
+				placeholder="Enter Acessory Number" class="form-control mb-4 col-4">
+
+			<lable> Accessory Name</lable>
+			<input type="text" th:field="*{aname}"
+				placeholder="Enter Acessory Name" class="form-control mb-4 col-4">
+
+			<lable>Date of Add</lable>
+			<input type="text" th:field="*{dofAdd}" placeholder="Enter date Of Add"
+				class="form-control mb-4 col-4">
+					
+			<button type="submit" class="btn btn-info col-2">Add Accessory</button>
+		</form>
+		<br>
+		<a th:href="@{/}"> Back home page</a>
+	</div>
+</body>
+
+</html>

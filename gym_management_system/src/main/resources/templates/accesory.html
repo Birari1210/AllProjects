@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title> Accessory page </title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+<h4> All accessory list</h4>
+<a th:href = "@{/addAcessoryForm}" class="btn btn-primary btn-sm mb-3"> Add Accessory </a>
+
+  		<table class = "table table-striped table-bordered" >
+		 <thead class = "table-dark">
+				<tr>
+					<th> accessory number  </th>
+					<th> accessory Name</th>
+					<th> date of add </th>
+					<th>Edit Accessory</th>
+					<th>Remove Accessory</th>
+									</tr>
+		      </thead>
+				<tr th:each="objht:${Display}">
+				<td th:text = "${objht.aid}"></td>
+			    <td th:text = "${objht.aname}"></td>
+				<td th:text = "${objht.dofAdd}"></td>
+					
+	   <td> <a th:href="@{/EditForm/{id}(id=${objht.aid})}" class="btn btn-primary">Edit  </a></td>	
+	 <td> <a th:href="@{/removeAccessory/{id}(id=${objht.aid})}" class="btn btn-danger">Remove</a></td>
+			   </tr>
+		</table>
+</body>
+</html>

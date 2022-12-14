@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HibernateMySql&apos; to &apos;HibernateMySqlApplication&apos;" description="Rename resource &apos;HibernateMySql&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/HibernateMySql" name="HibernateMySqlApplication" stamp="1667884819791" updateReferences="true"/>
+</session>

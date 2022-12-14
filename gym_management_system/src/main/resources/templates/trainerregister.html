@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+<title>Trainer Registration form</title>
+
+</head>
+<body style="background-color:powderblue;">
+<div class ="container" align="center">
+<h4>Trainer Registration </h4>
+</div>
+<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="text-center text-primary">Registration Form</h4>
+
+           <!-- <div class="row col-md-6 col-md-offset-4"> -->
+
+    <form action="/SaveTrainer" method="post">  
+
+   <div class="form-group" >
+   <label for="name">Enter Trainer Name</label>
+   <input type="text" class="form-control" name="name" placeholder="enter your name" required/>
+   </div>
+     
+   <div class="form-group">
+   <label for="CouresName">Enter coures Name</label>
+   <input type="text" class="form-control" name="couresName" placeholder="enter course name" required/>
+   </div>
+   
+   <div class="form-group">
+    <label for="Gender">Gender</label>
+   <input type="text"  class="form-control" name="gender" placeholder="enter gender" required/>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter age</label>
+   <input type="text" class="form-control" name="age" placeholder="enter your age" required/>
+   </div>
+   
+   <div class="form-group">
+   <label for="Age">Enter Address</label>
+   <input type="text" class="form-control"  name="address" placeholder="enter your Address" required/>
+   </div>
+   <div class="form-group">
+   <label for="mobNo">Enter mob number</label>
+   <input type="text" class="form-control" name="mobileNo" placeholder="enter mobile number" required/>
+   </div>
+   <div class="form-group">
+    <label for="Email">Enter Email</label>
+   <input type="text" class="form-control" name="email" placeholder="enter your email" required/>
+   </div>
+   <div class="form-group">
+    <label for="pass">Password</label>
+   <input type="text" class="form-control" name="password" placeholder="enter your password" required/>
+   </div>
+  
+   <div class="form-group">
+   <label for="Joindate">Enter date of joining</label>
+   <input type="date" class="form-control" name="dateOfJoin" placeholder="enter date of joining" required/><br>
+   </div>
+   <div align="center">
+   <button name="register" class = "btn btn-primary" type="submit">Register</button><br>
+   </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
