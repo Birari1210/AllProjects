@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,29 +24,27 @@ public class UserController {
 	@Autowired
 	userService objus;
 	
-	@RequestMapping("/adduser")
+	@PostMapping("/adduser")
 	public void createUser(@RequestBody User objUser)
 	{
 		User objuser1 = objus.addUserService(objUser);
 		System.out.println(objuser1.getUid());
 	}
 	
-	
-	@RequestMapping("/getlist")
+	@GetMapping("/getlist")
 	public List<User> getUserList()
 	{
 		List<User> ulistdata = objus.getUserList();
 		return ulistdata;
 	}
 
-	
-	 @GetMapping("/deluser/{id}")
+	 @DeleteMapping("/deluser/{id}")
 	  public void delUserById(@PathVariable String id)
 	  {
 		  objus.deleteUserbyID(Integer.parseInt(id));
 	  }
+	 
 	  @PutMapping("/updateuser")
-	  
 	  public String updateUserById(@RequestBody User objuser)
 	  {
 		  User objuser2 = objus.updateUser(objuser);

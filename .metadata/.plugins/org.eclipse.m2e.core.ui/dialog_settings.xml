@@ -6,6 +6,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\prasad.birari\Downloads\MySpringProject\MySpringProject"/>
+			<item value="C:\Users\prasad.birari\Downloads\myproject\myproject"/>
 			<item value="C:\Users\prasad.birari\Documents\workspace-spring-tool-suite-4-4.14.1.RELEASE\Mobile_Shop_Management"/>
 		</list>
 		<list key="projectNameTemplate">

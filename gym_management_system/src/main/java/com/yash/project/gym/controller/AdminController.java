@@ -1,4 +1,5 @@
 package com.yash.project.gym.controller;
+import java.security.PublicKey;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -306,6 +307,7 @@ public class AdminController {
 		@RequestMapping("/CourseDetails")
 		public ModelAndView geAllCoursesList() {
 			ModelAndView MVobj = new ModelAndView();
+		
 			MVobj.setViewName("userSee"); 
 			MVobj.addObject("Display", coServiceObj.getAllCoursesDetails());
 			return MVobj;
